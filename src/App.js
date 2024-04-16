@@ -5,64 +5,6 @@ import { AppointmentPicker } from "react-appointment-picker";
 
 function App() {
   const [loading, setLoading] = useState(false);
-  const [continuousLoading, setContinuousLoading] = useState(false);
-
-  const addAppointmentCallback = ({
-    addedAppointment: { day, number, time, id },
-    addCb,
-  }) => {
-    setLoading(true);
-    setTimeout(() => {
-      console.log(
-        `Added appointment ${number}, day ${day}, time ${time}, id ${id}`
-      );
-      addCb(day, number, time, id);
-      setLoading(false);
-    }, 2000);
-  };
-
-  const removeAppointmentCallback = ({ day, number }, removeCb) => {
-    setLoading(true);
-    setTimeout(() => {
-      console.log(`Removed appointment ${number}, day ${day}`);
-      removeCb(day, number);
-      setLoading(false);
-    }, 2000);
-  };
-
-  const addAppointmentCallbackContinuousCase = ({
-    addedAppointment: { day, number, time, id },
-    addCb,
-    removedAppointment: params,
-    removeCb,
-  }) => {
-    setContinuousLoading(true);
-    setTimeout(() => {
-      if (removeCb) {
-        console.log(
-          `Removed appointment ${params.number}, day ${params.day}, time ${params.time}, id ${params.id}`
-        );
-        removeCb(params.day, params.number);
-      }
-      console.log(
-        `Added appointment ${number}, day ${day}, time ${time}, id ${id}`
-      );
-      addCb(day, number, time, id);
-      setContinuousLoading(false);
-    }, 1000);
-  };
-
-  const removeAppointmentCallbackContinuousCase = (
-    { day, number },
-    removeCb
-  ) => {
-    setContinuousLoading(true);
-    setTimeout(() => {
-      console.log(`Removed appointment ${number}, day ${day}`);
-      removeCb(day, number);
-      setContinuousLoading(false);
-    }, 2000);
-  };
 
   const days = [
     [
@@ -120,8 +62,6 @@ function App() {
     <div>
       <h1>Appointment Picker</h1>
       <AppointmentPicker
-        addAppointmentCallback={addAppointmentCallback}
-        removeAppointmentCallback={removeAppointmentCallback}
         initialDay={new Date("2018-05-05")}
         days={days}
         maxReservableAppointments={3}
@@ -130,19 +70,6 @@ function App() {
         selectedByDefault
         loading={loading}
       />
-      {/* <h1>Appointment Picker Continuous Case</h1>
-      <AppointmentPicker
-        addAppointmentCallback={addAppointmentCallbackContinuousCase}
-        removeAppointmentCallback={removeAppointmentCallbackContinuousCase}
-        initialDay={new Date("2018-05-05")}
-        days={days}
-        maxReservableAppointments={2}
-        alpha
-        visible
-        selectedByDefault
-        loading={continuousLoading}
-        continuous
-      /> */}
     </div>
   );
 }
