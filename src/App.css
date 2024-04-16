@@ -36,3 +36,182 @@
     transform: rotate(360deg);
   }
 }
+
+.logo_im {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+}
+.brd_btm{
+  border-bottom: 1px solid #cdcdcd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.brd_right {
+  border-right: 1px solid #cdcdcd;
+}
+.prof_im {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.on_on {
+  font-size: 20px;
+  font-weight: 700;
+}
+.card_b {
+  border: none!important;
+  box-shadow: 0px 0px 10px 0px rgb( 0 0 0 / 10%);
+  padding: 20px;
+}
+.ico_so {
+  font-size: 22px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+.media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.media-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.ma_tit {
+  font-size: 30px;
+  font-weight: 700;
+}
+.appointment {
+  background-color: transparent!important;
+  color: #0B66FD!important;
+  border: 1px solid #cdcdcd!important;
+}
+.appointment--selected {
+  background-color: #0B66FD!important;
+  color: #fff!important;
+  border: 1px solid #0B66FD!important;
+}
+.appointment--reserved {
+  background-color: #E0E0E0!important;
+  color: #000!important;
+  border: 1px solid #E0E0E0!important;
+}
+.appointment-picker__col--selected,.appointment-picker__col--enabled:hover {
+  background-color: transparent!important;
+}
+.appointment-picker__col__name {
+  font-weight: 700!important;
+  font-size: 18px!important;
+  color: #000!important;
+  margin-bottom: 10px!important;
+}
+.h_don_form [type="checkbox"]:checked,
+.h_don_form [type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.h_don_form [type="checkbox"]:checked + label,
+.h_don_form [type="checkbox"]:not(:checked) + label
+{
+    position: relative;
+    padding: 6px 12px;
+    cursor: pointer;
+    display: inline-block;
+    color: #0B66FD;
+    margin-right: 8px;
+    font-size: 15px!important;
+    font-weight: 400!important;
+}
+.h_don_form [type="checkbox"]:checked + label:before,
+.h_don_form [type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 35px;
+    border: 1px solid #0B66FD;
+    border-radius: 30px;
+}
+.h_don_form [type="checkbox"]:checked + label{
+    color: #fff;
+    background: #0B66FD;
+    border-radius: 30px;
+}
+.h_don_form [type="checkbox"]:checked + label:after,
+.h_don_form [type="checkbox"]:not(:checked) + label:after {
+    content: '';
+    width: 100%;
+    height: 35px;
+    background: #0B66FD;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    z-index: -1;
+}
+.h_don_form [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.h_don_form [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.h_don_form p{
+    display: inline-block;
+    margin-top: 0px;
+}
+.note_en {
+  font-size: 14px;
+  color: #8b8b8b;
+  width: 80%;
+  margin-top: 10px;
+}
+.note_en a{
+  font-size: 14px;
+  color: #0B66FD;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-primary {
+  font-size: 16px!important;
+  color: #fff!important;
+  font-weight: 600!important;
+  background-color: #0B66FD!important;
+  padding: 10px 35px!important;
+  margin-top: 10px!important;
+}
+.sticky {
+  position: sticky;
+  top: 0px;
+}
+
+
+@media only screen and (min-width: 320px)  and (max-width: 767px) {
+.brd_right {
+  border-right: 0px solid #cdcdcd;
+}
+.appointment-content {
+  overflow-x: scroll!important;
+}
+.none_mobile {
+  display: none;
+}
+}
+@media only screen and (min-width: 768px)  and (max-width: 1024px) {
+  .appointment-content {
+    overflow-x: scroll!important;
+  }
+}
